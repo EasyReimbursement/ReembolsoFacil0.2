@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myapp="http://schemas.android.com/apk/res/br.org.reembolsofacil"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:scrollbars="vertical">
+
+	<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" android:layout_weight="1" android:layout_alignParentTop="true">
+    
+		<LinearLayout android:id="@+id/Tela"
+			android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+			
+			<TextView android:text="Preencha os dados do usuário: " android:id="@+id/MsgPrincipal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#00FF00"
+					android:typeface="monospace" android:gravity="center"></TextView>
+			
+			<TableLayout android:id="@+id/TableLayout02" android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:stretchColumns="1">
+				
+				<TableRow>
+					<TextView android:text="Login: " android:id="@+id/TxtLogin"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+					android:typeface="monospace"></TextView>
+					
+					<EditText android:text="" 
+						android:id="@+id/editTextLogin" android:scrollHorizontally="true"
+						android:maxLength="20"
+						android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+				</TableRow>
+				<TableRow>
+					<TextView android:text="E-mail: " android:id="@+id/TxtEmail"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+					android:typeface="monospace"></TextView>
+					
+					<EditText android:text="" android:id="@+id/editTextEmail" android:inputType="textEmailAddress"
+						android:scrollHorizontally="true" android:maxLength="40"
+						android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+				</TableRow>
+				<TableRow>
+					<TextView android:text="Senha: " android:id="@+id/TxtSenha"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+					android:typeface="monospace"></TextView>
+					
+					<EditText android:text="" android:id="@+id/editTextSenha" 
+						android:scrollHorizontally="true" android:maxLength="20"
+						android:password="true" android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+				</TableRow>
+				
+				<Button android:text="Cadastrar usuário" android:id="@+id/btnCadUsu"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"></Button>
+			</TableLayout>
+
+		</LinearLayout>
+	</ScrollView>
+        
+	<LinearLayout 
+		android:id="@+id/buttons" android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        
+		<com.admob.android.ads.AdView  
+			android:id="@+id/ad" android:layout_width="fill_parent" 
+	      	android:layout_height="50px" myapp:backgroundColor="#000000"  
+			myapp:primaryTextColor="#FFFFFF" myapp:secondaryTextColor="#CCCCCC"/>
+	</LinearLayout>
+</RelativeLayout>

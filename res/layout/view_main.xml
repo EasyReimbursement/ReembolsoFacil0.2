@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:myapp="http://schemas.android.com/apk/res/br.org.reembolsofacil"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:scrollbars="vertical">
+
+	<ScrollView android:id="@+id/ScrollView01" android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" android:layout_weight="1" android:layout_alignParentTop="true">
+    
+		<LinearLayout android:id="@+id/Tela1" android:scrollbars="vertical" android:padding="5dp"
+			android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+			
+			<TextView android:text="Preencha os dados da despesa: " android:id="@+id/msgPrincipal"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#00FF00"
+				android:typeface="monospace" android:gravity="center"/>
+					
+			<TableLayout android:id="@+id/TableLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:stretchColumns="1">
+				<TableRow>
+					<TextView android:text="Descrição: " android:id="@+id/TxtDescricao"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+						android:typeface="monospace"></TextView>
+	
+					<EditText android:text="" android:id="@+id/EditTextDescricao" 
+						android:scrollHorizontally="true" android:maxLength="80" android:inputType="textImeMultiLine" 
+						android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"></EditText>
+				</TableRow>
+				<TableRow>
+					<TextView android:text="Valor: " android:id="@+id/TxtValor" 
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+						android:typeface="monospace"></TextView>
+	
+					<EditText android:text="" android:id="@+id/EditTextValor" android:scrollHorizontally="true"
+						android:maxLength="9" 
+						android:inputType="numberDecimal" android:layout_width="fill_parent" android:digits="0123456789,"
+						android:layout_height="wrap_content"></EditText>
+				</TableRow>
+				<TableRow>
+					<TextView android:text="Tipo: " android:id="@+id/TxtSpinnerTipo"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+						android:typeface="monospace"></TextView>
+	
+					<Spinner android:id="@+id/SpinnerTipo" android:layout_width="wrap_content"
+						android:layout_height="wrap_content"></Spinner>
+				</TableRow>
+				<TableRow>
+					<TextView android:text="Data: " android:id="@+id/TxtDataDespesa"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+						android:typeface="monospace"></TextView>
+	
+					<Button android:id="@+id/pickDate" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:text="Alterar a data" />
+				</TableRow>
+				<TableRow>
+					<TextView android:text="Viagem: " android:id="@+id/TxtSpinnerTipo"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_gravity="center_vertical|right" android:textColor="#00FF00"
+						android:typeface="monospace"></TextView>
+	
+					<Spinner android:id="@+id/spinViagens" android:layout_width="0dp" android:layout_weight="1"
+						android:ellipsize="marquee" android:singleLine="true"
+						android:layout_height="wrap_content"></Spinner>
+				</TableRow>
+			</TableLayout>	
+			
+			<Button android:text="Enviar despesa" android:id="@+id/btnSendDepesa" 
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content" 
+					android:layout_gravity="center"></Button>
+					
+			<LinearLayout android:id="@+id/linLayoutButtons"
+				android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="horizontal">
+				<Button android:text="Excluir despesa" android:id="@+id/btnExcluirDespesa" 
+					android:layout_marginTop="10sp" android:visibility="gone"
+					android:layout_width="0sp" android:layout_height="wrap_content" 
+					android:layout_gravity="center" android:layout_weight="0.5"></Button>
+				<Button android:text="Cancelar" android:id="@+id/btnCancelar" 
+					android:layout_marginTop="10sp" android:visibility="gone"
+					android:layout_width="0sp" android:layout_height="wrap_content" 
+					android:layout_gravity="center" android:layout_weight="0.5"></Button>
+			</LinearLayout>
+
+			<LinearLayout android:id="@+id/linLayoutSpacer"
+				android:layout_width="fill_parent" android:layout_height="50px" android:orientation="horizontal">
+				
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+        
+	<LinearLayout 
+		android:id="@+id/buttons" android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        
+		<com.admob.android.ads.AdView  
+			android:id="@+id/ad" android:layout_width="fill_parent" 
+	      	android:layout_height="50px" myapp:backgroundColor="#000000"  
+			myapp:primaryTextColor="#FFFFFF" myapp:secondaryTextColor="#CCCCCC"/>
+	</LinearLayout>
+</RelativeLayout>
